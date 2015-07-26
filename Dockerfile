@@ -2,8 +2,11 @@ FROM ubuntu:14.04
 
 RUN apt-get update
 RUN apt-get install -y git curl nano golang nginx
-RUN curl https://raw.githubusercontent.com/sayanee/dotfiles/master/.bashrc > /root/.bashrc
+
+RUN curl https://raw.githubusercontent.com/andreiRS/dotfiles/master/.bashrc > /root/.bashrc
 RUN mkdir /apps
+
+
 ADD . /apps/html
 
 RUN mv /etc/nginx/nginx.conf /etc/nginx/nginx.conf.original
